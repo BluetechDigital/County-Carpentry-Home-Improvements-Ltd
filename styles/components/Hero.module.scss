@@ -1,0 +1,13 @@
+// Imports
+@import "../base/fonts";
+@import "../base/colors";
+
+.hero {
+	.ctaBanner {
+		clip-path: none;
+
+		@media (min-width: 1024px) {
+			clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 85%, 0 100%, 0% 0%);
+		}
+	}
+}

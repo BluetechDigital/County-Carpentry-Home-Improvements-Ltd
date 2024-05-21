@@ -1,0 +1,118 @@
+// Imports
+@import "../base/fonts";
+@import "../base/colors";
+
+.navbar {
+	ul {
+		font-family: $body;
+	}
+
+	.servicesSublinks {
+		li:nth-last-child(0) {
+			display: none;
+			@apply border-none;
+		}
+	}
+
+	.ourServicesLinks {
+		li {
+			a {
+				font-family: $body;
+			}
+		}
+	}
+
+	.nav {
+		top: 0px;
+		bottom: 0px;
+		right: 0px;
+		z-index: 998;
+		display: flex;
+		width: 83.33%;
+		position: fixed;
+		max-width: 30rem;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	// Reveal Fullscreen Nav
+	.navReveal {
+		right: 0px;
+		visibility: visible;
+		transition: all 0.5s ease-in-out;
+
+		::-webkit-scrollbar {
+			width: 0.65rem;
+			height: 0.65rem;
+		}
+
+		::-webkit-scrollbar-track {
+			background: $primary-default;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: $primary-default;
+			border-radius: 100px;
+
+			&:hover {
+				transition: all 0.5s;
+				background-color: $primary-default;
+			}
+		}
+	}
+
+	.navToggle {
+		@apply border-none mr-4 cursor-pointer static z-[999] right-[0px] top-[10px] p-0 w-[50px] h-[45px] bg-accent-two hover:bg-accent-three transition-all duration-200 ease-in-out;
+
+		span {
+			vertical-align: middle;
+			@apply bg-white inline-block relative w-[34px] h-[2px] rounded-[1px];
+
+			&:before,
+			&:after {
+				content: "";
+				@apply bg-white absolute inline-block h-[2px] rounded-[1px] left-[0px] w-[34px] transition-all duration-200 ease-in-out;
+			}
+
+			&:before {
+				@apply top-[-11px];
+			}
+
+			&:after {
+				@apply top-[11px];
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover > span:after,
+		&:hover > span:before {
+			@apply left-[0px] w-[34px];
+		}
+	}
+
+	// Open Full Screen Nav
+	.navToggleOpen {
+		@apply border-none mr-4 leading-3 text-center cursor-pointer fixed z-[999] right-[0px] top-[10px] p-0 w-[50px] h-[45px] bg-accent-two hover:bg-accent-three transition-all duration-200 ease-in-out;
+
+		span {
+			vertical-align: middle;
+			@apply bg-white inline-block relative h-[0px] w-[27px];
+
+			&:after,
+			&:before {
+				content: "";
+				@apply bg-white inline-block absolute rounded-[1px] h-[2px] w-[25px] top-[0px] left-[0px] transition-all duration-200 ease-in-out;
+			}
+
+			&:after {
+				@apply top-[-2px] left-[1px] rotate-[-45deg];
+			}
+			&:before {
+				@apply top-[-1.5px] left-[0.5px] rotate-[45deg];
+			}
+		}
+	}
+}
