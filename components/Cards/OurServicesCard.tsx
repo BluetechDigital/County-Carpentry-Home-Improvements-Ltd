@@ -20,87 +20,104 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 }) => {
 	return (
 		<>
-			<div className="flex flex-col group overflow-hidden">
+			<div className="h-full flex flex-col group overflow-hidden">
 				<Link
 					href={`${link?.url}`}
 					target={link?.target}
 					aria-label={`${link?.title}`}
 					className={
 						styles.card +
-						" overflow-hidden bg-black group-hover:scale-105 transition duration-700 ease-in-out"
+						" overflow-hidden group-hover:scale-105 transition duration-700 ease-in-out"
 					}
 				>
 					<motion.div
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="bg-primary-default group-hover:bg-accent-two relative px-4 py-6 w-full lg:py-12 h-[250px] sm:h-[275px] bg-center bg-no-repeat bg-cover"
+						className="px-4 py-6 mx-auto w-full h-full max-w-[275px] min-h-[275px] rounded-full lg:py-12 bg-center bg-no-repeat bg-cover"
 						style={{
 							backgroundImage: `url("${image?.sourceUrl}")`,
 						}}
-					>
-						<div
-							className={
-								link?.url
-									? "absolute -bottom-0 right-0 transition duration-700 ease-in-out"
-									: "hidden"
-							}
-						>
-							<div className="w-fit p-2 group-hover:mr-[8px] flex items-center justify-between text-primary-default bg-lightGreyTwo group-hover:bg-accent-three group-hover:text-white">
-								<span className="w-full min-w-52 lg:min-w-40 px-4 text-tiny font-Inter uppercase">
-									{link?.title}
-								</span>
-								<svg
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									className="cursor-pointer w-full h-[35px] object-contain object-center rotate-[-45deg] group-hover:rotate-[0deg] transition-all duration-500 ease-in-out"
-								>
-									<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-									<g
-										id="SVGRepo_tracerCarrier"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-									></g>
-									<g id="SVGRepo_iconCarrier">
-										{" "}
-										<path
-											fillRule="evenodd"
-											clipRule="evenodd"
-											d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z"
-											fill="#040404"
-											className="group-hover:fill-white transition-all duration-200 ease-in-out"
-										></path>{" "}
-									</g>
-								</svg>
-							</div>
-						</div>
-					</motion.div>
+					></motion.div>
 				</Link>
-				<div className="px-4 py-6">
+				<div className="px-4 py-6 flex flex-col justify-between">
+					<div className="">
+						<Link
+							href={`${link?.url}`}
+							target={link?.target}
+							aria-label={`${link?.title}`}
+							className={styles.card}
+						>
+							<motion.h3
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className="text-center text-primary-default group-hover:text-accent-two uppercase font-Inter text-medium my-3 font-semibold"
+							>
+								{title}
+							</motion.h3>
+						</Link>
+						<Paragraph
+							content={
+								paragraph?.length > 205
+									? paragraph?.substring(0, 205) + "..."
+									: paragraph
+							}
+							tailwindStyling="text-primary-default text-base text-center"
+						/>
+					</div>
+
 					<Link
 						href={`${link?.url}`}
 						target={link?.target}
 						aria-label={`${link?.title}`}
-						className={styles.card}
-					>
-						<motion.h3
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
-							className="text-center text-primary-default group-hover:text-accent-two uppercase font-Inter text-medium my-3 font-semibold"
-						>
-							{title}
-						</motion.h3>
-					</Link>
-					<Paragraph
-						content={
-							paragraph?.length > 235
-								? paragraph?.substring(0, 235) + "..."
-								: paragraph
+						className={
+							link?.url ? "mt-8 group w-fit hidden lg:block mx-auto" : "hidden"
 						}
-						tailwindStyling="text-primary-default text-base text-center"
-					/>
+					>
+						<div className="bg-accent-two group-hover:bg-primary-default p-4 lg:px-6 flex justify-between gap-6 h-full transition-all duration-500 ease-in-out">
+							<motion.h3
+								initial={initial}
+								whileInView={fadeInUp}
+								viewport={{once: true}}
+								className="text-white font-extrabold uppercase text-left text-paragraph"
+							>
+								{link?.title}
+							</motion.h3>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="31.905"
+								height="24.247"
+								viewBox="0 0 31.905 24.247"
+								className="w-6 h-6 text-white group-hover:translate-x-2 group-hover:rotate-[-45deg] transition-all duration-500 ease-in-out self-end"
+							>
+								<g
+									id="Group_14"
+									data-name="Group 14"
+									transform="translate(-443.5 -2073.925)"
+								>
+									<line
+										id="Line_2"
+										data-name="Line 2"
+										x2="30.063"
+										transform="translate(443.5 2086.054)"
+										fill="none"
+										stroke="#ffffff"
+										stroke-width="3"
+									/>
+									<path
+										id="Path_49"
+										data-name="Path 49"
+										d="M463.015,2090.015l11.306,11.082L463.3,2112.131"
+										transform="translate(-1.047 -15.019)"
+										fill="none"
+										stroke="#ffffff"
+										stroke-width="3"
+									/>
+								</g>
+							</svg>
+						</div>
+					</Link>
 				</div>
 			</div>
 		</>

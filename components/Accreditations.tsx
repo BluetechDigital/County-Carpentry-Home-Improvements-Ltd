@@ -38,7 +38,7 @@ const Accreditations: FC<IAccreditations> = ({
 					>
 						<Title
 							content={paragraph}
-							tailwindStyling="title mb-3 lg:mb-0 text-primary-default uppercase font-semibold font-Inter leading-tight text-center lg:text-left text-lg sm:text-xl lg:text-4xl"
+							tailwindStyling="title mb-3 lg:mb-0 text-white uppercase font-semibold font-Inter leading-tight text-center lg:text-left text-lg sm:text-xl lg:text-4xl"
 						/>
 					</motion.div>
 					<motion.div

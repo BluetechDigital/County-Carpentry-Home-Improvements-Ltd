@@ -96,59 +96,62 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							content={paragraph}
 							tailwindStyling="text-paragraph text-primary-default text-center lg:text-left"
 						/>
-						<Link
-							href={`${buttonLink?.url}`}
-							target={buttonLink?.target}
-							aria-label={`${buttonLink?.title}`}
-							className={
-								buttonLink?.url
-									? "group w-fit mx-auto lg:mx-0 mt-4 lg:mt-2"
-									: "hidden"
-							}
+						<motion.div
+							viewport={{once: true}}
+							initial={slideInLeftInitial}
+							whileInView={slideInRightFinish}
+							className={buttonLink?.url ? "w-fit" : "hidden"}
 						>
-							<div className="bg-accent-two group-hover:bg-primary-default p-4 lg:px-6 flex justify-between gap-6 h-full transition-all duration-500 ease-in-out">
-								<motion.h3
-									initial={initial}
-									whileInView={fadeInUp}
-									viewport={{once: true}}
-									className="text-white font-extrabold uppercase text-left text-paragraph"
-								>
-									{buttonLink?.title}
-								</motion.h3>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="31.905"
-									height="24.247"
-									viewBox="0 0 31.905 24.247"
-									className="w-6 h-6 text-white group-hover:translate-x-2 group-hover:rotate-[-45deg] transition-all duration-500 ease-in-out self-end"
-								>
-									<g
-										id="Group_14"
-										data-name="Group 14"
-										transform="translate(-443.5 -2073.925)"
+							<Link
+								href={`${buttonLink?.url}`}
+								target={buttonLink?.target}
+								aria-label={`${buttonLink?.title}`}
+								className="group mx-auto lg:mx-0 mt-4 lg:mt-2"
+							>
+								<div className="bg-accent-two group-hover:bg-primary-default p-4 lg:px-6 flex justify-between gap-6 h-full transition-all duration-500 ease-in-out">
+									<motion.h3
+										initial={initial}
+										whileInView={fadeInUp}
+										viewport={{once: true}}
+										className="text-white font-extrabold uppercase text-left text-paragraph"
 									>
-										<line
-											id="Line_2"
-											data-name="Line 2"
-											x2="30.063"
-											transform="translate(443.5 2086.054)"
-											fill="none"
-											stroke="#ffffff"
-											stroke-width="3"
-										/>
-										<path
-											id="Path_49"
-											data-name="Path 49"
-											d="M463.015,2090.015l11.306,11.082L463.3,2112.131"
-											transform="translate(-1.047 -15.019)"
-											fill="none"
-											stroke="#ffffff"
-											stroke-width="3"
-										/>
-									</g>
-								</svg>
-							</div>
-						</Link>
+										{buttonLink?.title}
+									</motion.h3>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="31.905"
+										height="24.247"
+										viewBox="0 0 31.905 24.247"
+										className="w-6 h-6 text-white group-hover:translate-x-2 group-hover:rotate-[-45deg] transition-all duration-500 ease-in-out self-end"
+									>
+										<g
+											id="Group_14"
+											data-name="Group 14"
+											transform="translate(-443.5 -2073.925)"
+										>
+											<line
+												id="Line_2"
+												data-name="Line 2"
+												x2="30.063"
+												transform="translate(443.5 2086.054)"
+												fill="none"
+												stroke="#ffffff"
+												stroke-width="3"
+											/>
+											<path
+												id="Path_49"
+												data-name="Path 49"
+												d="M463.015,2090.015l11.306,11.082L463.3,2112.131"
+												transform="translate(-1.047 -15.019)"
+												fill="none"
+												stroke="#ffffff"
+												stroke-width="3"
+											/>
+										</g>
+									</svg>
+								</div>
+							</Link>
+						</motion.div>
 						<motion.div
 							viewport={{once: true}}
 							initial={slideInRightInitial}

@@ -12,7 +12,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
-import useWindowWidth from "@/Hooks/WindowWidth";
 
 // Styling
 import styles from "../styles/components/Hero.module.scss";
@@ -27,7 +26,6 @@ const Hero: FC<IHero> = ({
 	buttonLinkTwo,
 	backgroundImage,
 }) => {
-	const windowWidth = useWindowWidth();
 	return (
 		<>
 			<div className={styles.hero + " hero relative z-50 flex flex-col h-fit"}>
@@ -41,9 +39,9 @@ const Hero: FC<IHero> = ({
 						className="w-full h-screen sm:h-[75vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
 						style={{
 							backgroundImage: `linear-gradient(
-								${windowWidth <= 1024 ? "180deg" : "90deg"},
-								rgb(0, 0, 0, 0.50),
-								rgba(0, 0, 0, 0.40),
+								180deg,
+								rgb(0, 0, 0, 0.35),
+								rgba(0, 0, 0, 0.25),
 								rgba(0, 0, 0, 0),
 								rgba(0, 0, 0, 0),
 								rgba(0, 0, 0, 0)

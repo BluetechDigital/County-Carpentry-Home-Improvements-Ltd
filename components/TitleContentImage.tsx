@@ -24,16 +24,25 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 	displayContentOption,
 	displayBackgroundColor,
 }) => {
+	let titleColor;
 	let backgroundColor;
+	let ButtonColor;
 
 	switch (displayBackgroundColor) {
 		case "White":
+			titleColor = "text-primary-default";
 			backgroundColor = "bg-white";
 			break;
 		case "Grey":
+			titleColor = "text-primary-default";
 			backgroundColor = "bg-lightGreyTwo";
 			break;
+		case "DarkBlue":
+			titleColor = "text-white";
+			backgroundColor = "bg-primary-default";
+			break;
 		default:
+			titleColor = "text-primary-default";
 			backgroundColor = "bg-white";
 			break;
 	}
@@ -50,7 +59,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="text-center lg:text-left text-base text-accent-two uppercase font-semibold font-Inter"
+						className={`text-center lg:text-left text-base text-accent-two uppercase font-semibold font-Inter`}
 					>
 						{subtitle}
 					</motion.h4>
@@ -58,13 +67,13 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="my-2 lg:max-w-4xl leading-snug lg:leading-[2.5rem] uppercase font-Inter text-primary-default text-center lg:text-left font-semibold text-lg sm:text-xl lg:text-4xl"
+						className={`my-2 lg:max-w-4xl leading-snug lg:leading-[2.5rem] uppercase font-Inter ${titleColor} text-center lg:text-left font-semibold text-lg sm:text-xl lg:text-4xl`}
 					>
 						{title}
 					</motion.h3>
 				</div>
 				<div
-					className={`relative z-10 gap-4 lg:gap-x-16 p-0 mx-auto items-center justify-center flex flex-col ${
+					className={`lg:max-w-[1800px] mx-auto relative z-10 gap-4 lg:gap-x-16 py-0 px-4 lg:pr-8 mx-auto items-center justify-center flex flex-col ${
 						displayContentOption == "Left"
 							? "lg:flex-row-reverse"
 							: "lg:flex-row"
@@ -78,8 +87,10 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 								: slideInLeftInitial
 						}
 						whileInView={slideInRightFinish}
-						className={`bg-center bg-no-repeat bg-cover w-full lg:w-1/2 h-[350px] lg:h-[500px] ${
-							title ? "xl:h-[650px]" : "xl:h-[600px]"
+						className={`bg-center bg-no-repeat bg-cover w-full sm:w-[350px] lg:w-[500px] lg:w-full h-[350px] lg:h-[500px] rounded-full ${
+							title
+								? "xl:h-[750px] xl:w-[750px] "
+								: "xl:h-[700px] xl:w-[700px] "
 						}`}
 						style={{
 							backgroundImage: `url(${image?.sourceUrl})`,
@@ -96,8 +107,8 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 						whileInView={slideInRightFinish}
 						className={`${
 							displayContentOption == "Left"
-								? "xl:pl-28 2xl:pl-48 lg:items-end"
-								: "xl:pr-28 2xl:pr-32 lg:items-start"
+								? "xl:pl-28 2xl:pl-20 lg:items-end"
+								: "xl:pr-28 2xl:pr-20 lg:items-start"
 						} lg:w-1/2 h-full`}
 					>
 						<TitleContentImageCard

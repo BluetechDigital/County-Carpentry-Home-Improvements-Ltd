@@ -29,11 +29,8 @@ const OurServices: FC<IOurServices> = ({
 			<div
 				className={
 					styles.ourServices +
-					" py-10 pb-20 lg:pb-10 px-4 bg-white bg-cover bg-center bg-no-repeat"
+					" py-10 pb-20 lg:pb-10 px-4 bg-lightGreyTwo bg-cover bg-center bg-no-repeat"
 				}
-				style={{
-					backgroundImage: `url(/svg/background/stacked-peaks-haikei-white-grey.svg)`,
-				}}
 			>
 				<div className="lg:container m-auto flex flex-col items-center gap-6">
 					<motion.div
@@ -121,7 +118,7 @@ const OurServices: FC<IOurServices> = ({
 							</Link>
 						</div>
 					</motion.div>
-					<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 py-6 px-0 gap-6 w-full">
+					<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 py-6 lg:py-20 px-0 gap-6 lg:gap-14 w-full">
 						{servicesGrid?.length > 0 ? (
 							servicesGrid?.map((item: any, index: number) => (
 								<Fragment key={index}>

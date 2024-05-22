@@ -46,7 +46,7 @@ const SkillsExperiences: FC<ISkillsExperiences> = ({
 								height={image?.mediaDetails.height}
 								className={`${
 									image?.sourceUrl
-										? `mx-auto xl:mx-0 w-full h-[150px] lg:h-[200px] ${
+										? `mx-auto xl:mx-0 w-full h-[150px] lg:h-[200px] rounded-full ${
 												displayImageFullWidth
 													? "px-0 object-cover"
 													: "px-16 lg:px-28 object-contain"

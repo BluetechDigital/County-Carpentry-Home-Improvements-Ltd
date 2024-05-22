@@ -27,12 +27,7 @@ const VideoBlock: FC<IVideoBlock> = ({
 }) => {
 	return (
 		<>
-			<div
-				className="py-10 pb-20 lg:pb-24 px-4 bg-lightGreyTwo"
-				style={{
-					clipPath: `ellipse(100% 55% at 48% 44%)`,
-				}}
-			>
+			<div className="py-10 pb-20 lg:pb-24 px-4 bg-lightGreyTwo">
 				<div className="lg:container mx-auto flex flex-col items-center justify-center gap-4 lg:gap-x-4 xl:gap-x-16">
 					<motion.div
 						initial={initial}
