@@ -24,7 +24,6 @@ export const getAllFlexibleContentComponents = async (
 												fieldGroupName
 												displaySection
 												title
-              									paragraph
               									ctaParagraph
 												buttonLink {
                 									url

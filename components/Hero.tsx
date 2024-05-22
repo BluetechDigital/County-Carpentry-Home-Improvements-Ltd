@@ -12,42 +12,43 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
+import useWindowWidth from "@/Hooks/WindowWidth";
 
 // Styling
 import styles from "../styles/components/Hero.module.scss";
 
 // Components
-import Paragraph from "./Elements/Paragraph";
 import RenderStars from "./Elements/RenderStars";
 
 const Hero: FC<IHero> = ({
 	title,
-	paragraph,
 	buttonLink,
 	ctaParagraph,
 	buttonLinkTwo,
 	backgroundImage,
 }) => {
+	const windowWidth = useWindowWidth();
+
 	return (
 		<>
 			<div className={styles.hero + " hero relative z-50 flex flex-col h-fit"}>
-				<div className="lg:relative pt-[65px] md:pt-[112px] lg:pt-[112px] flex flex-col lg:flex-row">
-					<motion.div
-						initial={initial}
-						variants={stagger}
-						whileInView="animate"
-						viewport={{once: true}}
+				<div
+					className="lg:relative pt-[65px] md:pt-[112px] lg:pt-[112px] flex flex-col lg:flex-row"
+					style={{
+						clipPath: `ellipse(100% 55% at 48% 44%)`,
+					}}
+				>
+					<div
 						className="w-full h-screen sm:h-[75vh] flex flex-col items-center lg:items-baseline justify-center relative bg-center bg-no-repeat bg-cover"
 						style={{
 							backgroundImage: `linear-gradient(
-								90deg,
-								rgb(0, 0, 0, 0.75),
-								rgba(0, 0, 0, 0.70),
+								${windowWidth <= 1024 ? "180deg" : "90deg"},
+								rgb(0, 0, 0, 0.50),
+								rgba(0, 0, 0, 0.40),
 								rgba(0, 0, 0, 0),
 								rgba(0, 0, 0, 0),
 								rgba(0, 0, 0, 0)
 							),url("${backgroundImage?.sourceUrl}")`,
-							clipPath: `ellipse(100% 55% at 48% 44%)`,
 						}}
 					>
 						<div className="relative z-10 flex flex-col items-center lg:items-start gap-4 px-4 sm:px-8 lg:px-24">
@@ -62,14 +63,10 @@ const Hero: FC<IHero> = ({
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="text-center lg:text-left uppercase text-medium sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl text-white font-semibold leading-tight xl:leading-[2.5rem]"
+									className="text-center lg:text-left uppercase text-xl md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-6xl text-white font-semibold leading-tight xl:leading-[2.5rem] mb-8"
 								>
 									{title}
 								</motion.h1>
-								<Paragraph
-									content={paragraph}
-									tailwindStyling="py-2 text-white leading-normal text-paragraph text-center lg:text-left"
-								/>
 								<motion.div
 									initial={initial}
 									variants={stagger}
@@ -239,7 +236,7 @@ const Hero: FC<IHero> = ({
 								{buttonLinkTwo?.title}
 							</Link>
 						</motion.div>
-					</motion.div>
+					</div>
 				</div>
 			</div>
 		</>
