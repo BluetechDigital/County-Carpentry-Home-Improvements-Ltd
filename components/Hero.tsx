@@ -28,7 +28,6 @@ const Hero: FC<IHero> = ({
 	backgroundImage,
 }) => {
 	const windowWidth = useWindowWidth();
-
 	return (
 		<>
 			<div className={styles.hero + " hero relative z-50 flex flex-col h-fit"}>
