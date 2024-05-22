@@ -36,55 +36,53 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 						viewport={{once: true}}
 						initial={slideInLeftInitial}
 						whileInView={slideInRightFinish}
-						className="relative bg-darkGrey hover:bg-accent-dark transition-all ease-in-out duration-500 flex flex-col items-center justify-between p-4 min-h-[475px] sm:min-h-[400px] md:min-h-[375px] lg:min-h-[320px] bg-blend-multiply bg-center bg-cover bg-no-repeat"
+						className="relative bg-darkGrey hover:bg-accent-dark transition-all ease-in-out duration-500 flex flex-col items-center justify-between p-4 min-h-[600px] sm:min-h-[600px] md:min-h-[400px] lg:min-h-[320px] bg-blend-multiply bg-center bg-cover bg-no-repeat"
 						style={{
 							backgroundImage: `url(${cardOne?.backgroundImage?.sourceUrl})`,
 						}}
 					>
-						<div className="w-full min-h-full z-10 flex flex-col justify-between items-center xl:items-start">
-							<motion.h4
+						<motion.h4
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="text-white font-Inter uppercase font-semibold text-base text-center lg:text-left"
+						>
+							{cardOne?.subtitle}
+						</motion.h4>
+						<div>
+							<motion.h3
 								initial={initial}
 								whileInView={fadeInUp}
 								viewport={{once: true}}
-								className="text-white font-Inter uppercase font-semibold text-base text-center md:text-left"
+								className="text-white font-extrabold leading-[1.75rem] sm:leading-snug text-2xl italic mb-4 text-center xl:text-left font-Inter"
 							>
-								{cardOne?.subtitle}
-							</motion.h4>
-							<div className="w-full">
-								<motion.h3
-									initial={initial}
-									whileInView={fadeInUp}
-									viewport={{once: true}}
-									className="text-white font-extrabold leading-[1.75rem] sm:leading-snug text-2xl italic mb-4 text-center xl:text-left font-Inter"
+								{cardOne?.title}
+							</motion.h3>
+							<div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-end md:gap-4 lg:space-x-0 xl:space-x-4 space-y-4 md:space-y-0 lg:space-y-4 xl:space-y-0">
+								<Link
+									href={`${cardOne?.buttonLink?.url}`}
+									target={cardOne?.buttonLink?.target}
+									aria-label={`${cardOne?.buttonLink?.title}`}
+									className={
+										cardOne?.buttonLink?.url
+											? "w-fit mx-auto lg:mx-0 py-4 px-6 cursor-pointer bg-white hover:bg-black transition-all ease-in-out duration-500 font-semibold uppercase text-primary-default text-base hover:text-white text-center font-Inter"
+											: "hidden"
+									}
 								>
-									{cardOne?.title}
-								</motion.h3>
-								<div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-end lg:space-x-4 md:gap-4 lg:space-x-0 xl:space-x-4 space-y-4 md:space-y-0 lg:space-y-4 xl:space-y-0">
-									<Link
-										href={`${cardOne?.buttonLink?.url}`}
-										target={cardOne?.buttonLink?.target}
-										aria-label={`${cardOne?.buttonLink?.title}`}
-										className={
-											cardOne?.buttonLink?.url
-												? "w-fit mx-auto lg:mx-0 py-4 px-6 cursor-pointer bg-white hover:bg-black transition-all ease-in-out duration-500 font-semibold uppercase text-primary-default text-base hover:text-white text-center font-Inter"
-												: "hidden"
-										}
-									>
-										{cardOne?.buttonLink?.title}
-									</Link>
-									<Link
-										href={`${cardOne?.buttonLinkTwo?.url}`}
-										target={cardOne?.buttonLinkTwo?.target}
-										aria-label={`${cardOne?.buttonLinkTwo?.title}`}
-										className={
-											cardOne?.buttonLinkTwo?.url
-												? "w-fit mx-auto lg:mx-0 py-4 px-6 cursor-pointer bg-accent-two  hover:bg-tertiary-two transition-all ease-in-out duration-500 font-semibold uppercase text-white text-base hover:text-white text-center font-Inter"
-												: "hidden"
-										}
-									>
-										{cardOne?.buttonLinkTwo?.title}
-									</Link>
-								</div>
+									{cardOne?.buttonLink?.title}
+								</Link>
+								<Link
+									href={`${cardOne?.buttonLinkTwo?.url}`}
+									target={cardOne?.buttonLinkTwo?.target}
+									aria-label={`${cardOne?.buttonLinkTwo?.title}`}
+									className={
+										cardOne?.buttonLinkTwo?.url
+											? "w-fit mx-auto lg:mx-0 py-4 px-6 cursor-pointer bg-accent-two  hover:bg-tertiary-two transition-all ease-in-out duration-500 font-semibold uppercase text-white text-base hover:text-white text-center font-Inter"
+											: "hidden"
+									}
+								>
+									{cardOne?.buttonLinkTwo?.title}
+								</Link>
 							</div>
 						</div>
 					</motion.div>

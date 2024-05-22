@@ -41,8 +41,8 @@ const Hero: FC<IHero> = ({
 						style={{
 							backgroundImage: `linear-gradient(
 								90deg,
-								rgb(225, 225, 225, 0.75),
-								rgba(225, 225, 225, 0.70),
+								rgb(0, 0, 0, 0.75),
+								rgba(0, 0, 0, 0.70),
 								rgba(0, 0, 0, 0),
 								rgba(0, 0, 0, 0),
 								rgba(0, 0, 0, 0)
@@ -62,13 +62,13 @@ const Hero: FC<IHero> = ({
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
-									className="text-center lg:text-left uppercase text-medium sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl text-primary-default font-semibold leading-tight xl:leading-[2.5rem]"
+									className="text-center lg:text-left uppercase text-medium sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl text-white font-semibold leading-tight xl:leading-[2.5rem]"
 								>
 									{title}
 								</motion.h1>
 								<Paragraph
 									content={paragraph}
-									tailwindStyling="py-2 text-primary-default leading-normal text-paragraph text-center lg:text-left"
+									tailwindStyling="py-2 text-white leading-normal text-paragraph text-center lg:text-left"
 								/>
 								<motion.div
 									initial={initial}
@@ -195,7 +195,7 @@ const Hero: FC<IHero> = ({
 								className="flex items-center justify-between gap-4 font-semibold font-Inter uppercase leading-tight text-white text-tiny md:text-base lg:text-medium"
 							>
 								<span>{ctaParagraph}</span>
-								<span className="group xl:hidden flex items-center justify-end px-2 h-12 w-fit lg:h-16 rounded-full bg-accent-three hover:bg-accent-four transition-all duration-200 ease-in-out">
+								<span className="group xl:hidden flex items-center justify-end px-2 h-12 w-fit lg:h-16 rounded-full bg-tertiary-dark hover:bg-primary-default transition-all duration-200 ease-in-out">
 									<svg
 										className="w-8 h-8 p-1 rotate-[-45deg] group-hover:rotate-[0deg] transition-all duration-200 ease-in-out"
 										xmlns="http://www.w3.org/2000/svg"

@@ -25,7 +25,7 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 		<>
 			<div
 				className={
-					styles.ourServices +
+					styles.ourServicesTwo +
 					" relative py-8 px-4 bg-primary-default border-t-8 border-accent-default border-solid"
 				}
 			>

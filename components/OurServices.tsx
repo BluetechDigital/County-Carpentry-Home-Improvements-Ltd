@@ -32,7 +32,6 @@ const OurServices: FC<IOurServices> = ({
 					" py-10 pb-20 lg:pb-10 px-4 bg-white bg-cover bg-center bg-no-repeat"
 				}
 				style={{
-					clipPath: `ellipse(100% 55% at 48% 44%)`,
 					backgroundImage: `url(/svg/background/stacked-peaks-haikei-white-grey.svg)`,
 				}}
 			>
