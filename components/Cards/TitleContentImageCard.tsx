@@ -113,7 +113,12 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 						<></>
 					)}
 				</div>
-				<div className={buttonLink?.title ? "flex mt-4" : "hidden"}>
+				<motion.div
+					initial={initial}
+					whileInView={fadeInUp}
+					viewport={{once: true}}
+					className={buttonLink?.title ? "flex mt-4" : "hidden"}
+				>
 					<Link
 						href={`${buttonLink?.url}`}
 						target={buttonLink?.target}
@@ -165,7 +170,7 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 							</svg>
 						</div>
 					</Link>
-				</div>
+				</motion.div>
 			</motion.div>
 		</>
 	);
