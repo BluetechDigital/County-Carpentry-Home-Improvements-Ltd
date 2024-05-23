@@ -4,12 +4,14 @@ import fadeInUp, {
 	initial,
 	arrayLoopStaggerChildren,
 } from "../../animations/animations";
-import {FC, Fragment} from "react";
 import Link from "next/link";
+import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {ITitleContentImageCard} from "@/types/components";
-import Paragraph from "../Elements/Paragraph";
+
+// Components
 import Title from "../Elements/Title";
+import Paragraph from "../Elements/Paragraph";
 
 const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 	title,
