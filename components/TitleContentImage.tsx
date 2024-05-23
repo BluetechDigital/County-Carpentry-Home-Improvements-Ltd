@@ -60,28 +60,6 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 		<>
 			<div className={`titleContentImage py-10 ${backgroundColor}`}>
 				<div
-					className={
-						title ? "relative z-10 lg:container mx-auto block p-4" : "hidden"
-					}
-				>
-					<motion.h4
-						initial={initial}
-						whileInView={fadeInUp}
-						viewport={{once: true}}
-						className={`text-center lg:text-left text-base text-accent-two uppercase font-semibold font-Inter`}
-					>
-						{subtitle}
-					</motion.h4>
-					<motion.h3
-						initial={initial}
-						whileInView={fadeInUp}
-						viewport={{once: true}}
-						className={`my-2 lg:max-w-4xl leading-snug lg:leading-[2.5rem] uppercase font-Inter ${titleColor} text-center lg:text-left font-semibold text-lg sm:text-xl lg:text-4xl`}
-					>
-						{title}
-					</motion.h3>
-				</div>
-				<div
 					className={`lg:max-w-[1800px] mx-auto relative z-10 gap-4 lg:gap-x-16 py-0 px-4 lg:pr-8 items-center justify-center flex flex-col ${
 						displayContentOption == "Left"
 							? "lg:flex-row-reverse"

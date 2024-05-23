@@ -33,9 +33,26 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 					title ? "pt-2 pb-10 lg:py-4" : "py-10"
 				} px-4 lg:items-baseline`}
 			>
+				<motion.h4
+					initial={initial}
+					whileInView={fadeInUp}
+					viewport={{once: true}}
+					className={`text-center lg:text-left text-base text-accent-two uppercase font-semibold font-Inter`}
+				>
+					{subtitle}
+				</motion.h4>
+				<motion.h3
+					initial={initial}
+					whileInView={fadeInUp}
+					viewport={{once: true}}
+					className={`my-2 lg:max-w-4xl leading-snug lg:leading-[2.5rem] uppercase font-Inter ${titleColor} text-center lg:text-left font-semibold text-lg sm:text-xl lg:text-4xl`}
+				>
+					{title}
+				</motion.h3>
+
 				<Title
 					content={textTitle}
-					tailwindStyling={`mb-2 lg:max-w-xl leading-[1.5rem] font-semibold text-paragraph text-center lg:text-left ${titleColor}`}
+					tailwindStyling={`my-2 lg:max-w-xl leading-[1.5rem] font-semibold text-paragraph text-center lg:text-left ${titleColor}`}
 				/>
 				<Paragraph
 					content={paragraph}
