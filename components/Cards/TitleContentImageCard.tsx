@@ -17,7 +17,10 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 	textTitle,
 	paragraph,
 	buttonLink,
+	titleColor,
 	bulletPoints,
+	paragraphColor,
+	buttonHoverColor,
 }) => {
 	return (
 		<>
@@ -32,11 +35,11 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 			>
 				<Title
 					content={textTitle}
-					tailwindStyling="mb-2 lg:max-w-xl leading-[1.5rem] font-semibold text-paragraph text-center lg:text-left text-primary-default"
+					tailwindStyling={`mb-2 lg:max-w-xl leading-[1.5rem] font-semibold text-paragraph text-center lg:text-left ${titleColor}`}
 				/>
 				<Paragraph
 					content={paragraph}
-					tailwindStyling="lg:max-w-xl leading-[1.5rem] text-paragraph lg:text-left text-primary-default"
+					tailwindStyling={`lg:max-w-xl leading-[1.5rem] text-paragraph lg:text-left ${paragraphColor}`}
 				/>
 				<div
 					className={
@@ -98,7 +101,9 @@ const TitleContentImageCard: FC<ITitleContentImageCard> = ({
 						aria-label={`${buttonLink?.title}`}
 						className={buttonLink?.url ? "group" : "hidden"}
 					>
-						<div className="bg-accent-two group-hover:bg-primary-default p-4 lg:px-6 flex justify-between gap-6 h-full transition-all duration-500 ease-in-out">
+						<div
+							className={`bg-accent-two ${buttonHoverColor} p-4 lg:px-6 flex justify-between gap-6 h-full transition-all duration-500 ease-in-out`}
+						>
 							<motion.h3
 								initial={initial}
 								whileInView={fadeInUp}

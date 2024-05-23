@@ -25,25 +25,34 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 	displayBackgroundColor,
 }) => {
 	let titleColor;
+	let paragraphColor;
 	let backgroundColor;
-	let ButtonColor;
+	let buttonHoverColor;
 
 	switch (displayBackgroundColor) {
 		case "White":
 			titleColor = "text-primary-default";
+			paragraphColor = "text-primary-default";
 			backgroundColor = "bg-white";
+			buttonHoverColor = "group-hover:bg-primary-default";
 			break;
 		case "Grey":
 			titleColor = "text-primary-default";
+			paragraphColor = "text-primary-default";
 			backgroundColor = "bg-lightGreyTwo";
+			buttonHoverColor = "group-hover:bg-primary-default";
 			break;
 		case "DarkBlue":
 			titleColor = "text-white";
+			paragraphColor = "text-white";
 			backgroundColor = "bg-primary-default";
+			buttonHoverColor = "group-hover:bg-tertiary-default";
 			break;
 		default:
 			titleColor = "text-primary-default";
+			paragraphColor = "text-primary-default";
 			backgroundColor = "bg-white";
+			buttonHoverColor = "group-hover:bg-primary-default";
 			break;
 	}
 
@@ -73,7 +82,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 					</motion.h3>
 				</div>
 				<div
-					className={`lg:max-w-[1800px] mx-auto relative z-10 gap-4 lg:gap-x-16 py-0 px-4 lg:pr-8 mx-auto items-center justify-center flex flex-col ${
+					className={`lg:max-w-[1800px] mx-auto relative z-10 gap-4 lg:gap-x-16 py-0 px-4 lg:pr-8 items-center justify-center flex flex-col ${
 						displayContentOption == "Left"
 							? "lg:flex-row-reverse"
 							: "lg:flex-row"
@@ -87,7 +96,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 								: slideInLeftInitial
 						}
 						whileInView={slideInRightFinish}
-						className={`bg-center bg-no-repeat bg-cover w-full sm:w-[350px] lg:w-[500px] lg:w-full h-[350px] lg:h-[500px] rounded-full ${
+						className={`bg-center bg-no-repeat bg-cover w-full sm:w-[350px] lg:w-[500px] h-[350px] lg:h-[500px] rounded-full ${
 							title
 								? "xl:h-[750px] xl:w-[750px] "
 								: "xl:h-[700px] xl:w-[700px] "
@@ -116,8 +125,11 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							subtitle={subtitle}
 							textTitle={textTitle}
 							paragraph={paragraph}
+							titleColor={titleColor}
 							buttonLink={buttonLink}
 							bulletPoints={bulletPoints}
+							paragraphColor={paragraphColor}
+							buttonHoverColor={buttonHoverColor}
 						/>
 					</motion.div>
 				</div>

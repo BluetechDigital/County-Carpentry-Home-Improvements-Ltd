@@ -457,6 +457,9 @@ export type ITitleContentImageCard = {
 	subtitle: string;
 	paragraph: string;
 	textTitle: string;
+	titleColor: string;
+	buttonHoverColor: string;
+	paragraphColor: string;
 	buttonLink: {
 		url: string;
 		title: string;
