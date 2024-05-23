@@ -90,7 +90,7 @@ const Footer: FC = () => {
 																	: "_self"
 															}`}
 															aria-label={`${item?.node?.label}`}
-															className="text-white transition-all duration-200 ease-in-out text-base hover:text-accent-two hover:border-b-2"
+															className="font-Inter text-white transition-all duration-200 ease-in-out text-lg text-center lg:text-left uppercase hover:text-accent-two hover:border-b-2"
 														>
 															{item?.node?.label}
 														</Link>
@@ -454,7 +454,7 @@ const Footer: FC = () => {
 								</span>
 							</Link>
 						</motion.div>
-						<ul className="flex flex-col sm:flex-row w-auto gap-4 lg:gap-2 sm:gap-16 p-6">
+						<ul className="flex flex-col sm:flex-row w-auto gap-4 sm:gap-16 lg:gap-8 p-6">
 							{globalContext?.copyrightLinks?.length > 0 ? (
 								globalContext?.copyrightLinks?.map(
 									(item: any, index: number) => (
@@ -472,7 +472,7 @@ const Footer: FC = () => {
 														item?.node?.target ? item?.node?.target : "_self"
 													}`}
 													aria-label={`${item?.node?.label}`}
-													className="text-white transition-all duration-200 ease-in-out text-tiny hover:text-accent-two hover:border-b-2"
+													className="font-Inter lg:text-paragraph text-white text-tiny text-center lg:text-left uppercase transition-all duration-200 ease-in-out hover:text-accent-two hover:border-b-2"
 												>
 													{item?.node?.label}
 												</Link>
