@@ -62,7 +62,7 @@
 	}
 
 	.navToggle {
-		@apply border-none mr-4 cursor-pointer static z-[999] right-[0px] top-[10px] p-0 w-[50px] h-[45px] bg-accent-two hover:bg-accent-three transition-all duration-200 ease-in-out;
+		@apply static border-none cursor-pointer z-[999] mr-4 right-[0px] top-[10px] p-0 w-[50px] h-[45px] bg-accent-two hover:bg-accent-three transition-all duration-200 ease-in-out;
 
 		span {
 			vertical-align: middle;
@@ -95,7 +95,7 @@
 
 	// Open Full Screen Nav
 	.navToggleOpen {
-		@apply border-none mr-4 leading-3 text-center cursor-pointer fixed z-[999] right-[0px] top-[10px] p-0 w-[50px] h-[45px] bg-accent-two hover:bg-accent-three transition-all duration-200 ease-in-out;
+		@apply static border-none cursor-pointer z-[999] mr-4 right-[0px] top-[10px] p-0 w-[50px] h-[45px] bg-accent-two hover:bg-accent-three transition-all duration-200 ease-in-out;
 
 		span {
 			vertical-align: middle;

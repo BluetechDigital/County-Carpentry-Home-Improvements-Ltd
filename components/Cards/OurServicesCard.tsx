@@ -71,9 +71,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 						href={`${link?.url}`}
 						target={link?.target}
 						aria-label={`${link?.title}`}
-						className={
-							link?.url ? "mt-8 group w-fit hidden lg:block mx-auto" : "hidden"
-						}
+						className={link?.url ? "mt-8 group w-fit mx-auto" : "hidden"}
 					>
 						<div className="bg-accent-two group-hover:bg-primary-default p-4 lg:px-6 flex justify-between gap-6 h-full transition-all duration-500 ease-in-out">
 							<motion.h3

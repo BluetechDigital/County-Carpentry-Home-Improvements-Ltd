@@ -45,7 +45,7 @@ const Accreditations: FC<IAccreditations> = ({
 						viewport={{once: true}}
 						initial={slideInRightInitial}
 						whileInView={slideInRightFinish}
-						className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-10 xl:grid-cols-4 lg:gap-4 py-0 lg:py-6 items-center justify-center"
+						className="w-full lg:w-[60%] grid grid-cols-1 xs:grid-cols-2 gap-10 xl:grid-cols-4 lg:gap-4 py-0 lg:py-6 items-center justify-center"
 					>
 						{accreditationsGrid?.length > 0 ? (
 							accreditationsGrid?.map((item: any, keys: number) => (

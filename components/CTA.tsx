@@ -14,7 +14,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 	return (
 		<>
 			<div
-				className="py-8 bg-cover bg-no-repeat bg-center"
+				className="bg-cover bg-no-repeat bg-center"
 				style={{
 					backgroundImage: `url("${backgroundImage?.sourceUrl}")`,
 				}}

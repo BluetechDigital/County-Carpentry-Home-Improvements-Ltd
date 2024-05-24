@@ -1,7 +1,6 @@
 // Imports
 import fadeInUp, {
 	initial,
-	stagger,
 	slideInRightFinish,
 	slideInLeftInitial,
 	slideInRightInitial,
@@ -100,13 +99,13 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							viewport={{once: true}}
 							initial={slideInLeftInitial}
 							whileInView={slideInRightFinish}
-							className={buttonLink?.url ? "w-fit" : "hidden"}
+							className={buttonLink?.url ? "w-fit mx-auto lg:mx-0" : "hidden"}
 						>
 							<Link
 								href={`${buttonLink?.url}`}
 								target={buttonLink?.target}
 								aria-label={`${buttonLink?.title}`}
-								className="group mx-auto lg:mx-0 mt-4 lg:mt-2"
+								className="group mt-4 lg:mt-2"
 							>
 								<div className="bg-accent-two group-hover:bg-primary-default p-4 lg:px-6 flex justify-between gap-6 h-full transition-all duration-500 ease-in-out">
 									<motion.h3
@@ -217,7 +216,6 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 									</svg>
 								</div>
 							</Link>
-
 							<Link
 								className="group"
 								href={`${cardThree?.link?.url}`}

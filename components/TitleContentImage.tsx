@@ -58,8 +58,8 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 		<>
 			<div className={`titleContentImage py-10 ${backgroundColor}`}>
 				<div
-					className={`lg:max-w-[1800px] mx-auto relative z-10 gap-4 lg:gap-x-16 py-0 px-4 lg:pr-8 items-center justify-center flex flex-col ${
-						displayContentOption == "Left"
+					className={`lg:max-w-[1800px] mx-auto relative z-10 gap-4 lg:gap-x-16 py-0 px-4 lg:pr-8 items-center justify-center flex flex-col-reverse ${
+						displayContentOption === "Left"
 							? "lg:flex-row-reverse"
 							: "lg:flex-row"
 					}`}
@@ -67,7 +67,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 					<motion.div
 						viewport={{once: true}}
 						initial={
-							displayContentOption == "Left"
+							displayContentOption === "Left"
 								? slideInRightInitial
 								: slideInLeftInitial
 						}
@@ -85,7 +85,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 					<motion.div
 						viewport={{once: true}}
 						initial={
-							displayContentOption == "Left"
+							displayContentOption === "Left"
 								? slideInLeftInitial
 								: slideInRightInitial
 						}
