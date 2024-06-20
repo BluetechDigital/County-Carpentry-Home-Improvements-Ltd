@@ -108,7 +108,7 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 										transform="translate(443.5 2086.054)"
 										fill="none"
 										stroke="#ffffff"
-										stroke-width="3"
+										strokeWidth="3"
 									/>
 									<path
 										id="Path_49"
@@ -117,7 +117,7 @@ const OurServicesGridTwo: FC<IOurServicesGridTwo> = ({
 										transform="translate(-1.047 -15.019)"
 										fill="none"
 										stroke="#ffffff"
-										stroke-width="3"
+										strokeWidth="3"
 									/>
 								</g>
 							</svg>

@@ -174,18 +174,6 @@ export type IContactForm = {
 	title: string;
 	paragraph: string;
 };
-export type IMaintenance = {
-	title: string;
-	paragraph: string;
-	backgroundImage: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
-};
 export type IGallerySlider = {
 	gallerySlider: [
 		{
@@ -373,16 +361,6 @@ export type IRequestAppointmentForm = {
 // Global
 export type ILayout = {
 	children: React.ReactNode;
-};
-export type IErrorPage = {
-	title: string;
-	paragraph: string;
-	backgroundImage: string;
-	buttonLink: {
-		url: string;
-		title: string;
-		target: string;
-	};
 };
 export type IPagination = {
 	contentArray: any;

@@ -14,12 +14,12 @@ import {useState, FC, Fragment} from "react";
 import {useGlobalContext} from "@/context/global";
 
 // Styling
-import styles from "./../../styles/components/Navbar.module.scss";
+import styles from "@/styles/components/Navbar.module.scss";
 
 // Components
-import SideMenu from "../Elements/SideMenu";
-import NoticeInfoBanner from "../NoticeInfoBanner";
-import NavbarContactInfoBanner from "../Elements/NavbarContactInfoBanner";
+import SideMenu from "@/components/Elements/SideMenu";
+import NoticeInfoBanner from "@/components/NoticeInfoBanner";
+import NavbarContactInfoBanner from "@/components/Elements/NavbarContactInfoBanner";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();

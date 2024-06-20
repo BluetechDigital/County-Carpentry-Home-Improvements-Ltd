@@ -1,38 +1,36 @@
+"use client";
+
 // Imports
 import React, {FC, Fragment} from "react";
-import {usePageContext} from "@/context/pages";
-import {IPostTypeFlexibleContent} from "@/types/context";
+import {usePageContext} from "@/context/providers/PageContextProvider";
 
 // Components
-import CTA from "../CTA";
-import Hero from "../Hero";
-import Stats from "../Stats";
-import CTATwo from "../CTATwo";
-import HeroTwo from "../HeroTwo";
-import Gallery from "../Gallery";
-import OurClients from "../OurClients";
-import VideoBlock from "../VideoBlock";
-import ContactForm from "../ContactForm";
-import OurServices from "../OurServices";
-import ErrorPage from "../Global/ErrorPage";
-import GallerySlider from "../GallerySlider";
-import Accreditations from "../Accreditations";
-import TitleParagraph from "../TitleParagraph";
-import Maintenance from "../Global/Maintenance";
-import TestimonialsTwo from "../TestimonialsTwo";
-import OurProjectsGrid from "../OurProjectsGrid";
-import TestimonialsGrid from "../TestimonialsGrid";
-import TitleContentImage from "../TitleContentImage";
-import SkillsExperiences from "../SkillsExperiences";
-import AboutContentImage from "../AboutContentImage";
-import TestimonialsSlider from "../TestimonialsSlider";
-import OurServicesGridTwo from "../OurServicesGridTwo";
-import RequestAppointmentForm from "../RequestAppointmentForm";
+import CTA from "@/components/CTA";
+import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
+import CTATwo from "@/components/CTATwo";
+import HeroTwo from "@/components/HeroTwo";
+import Gallery from "@/components/Gallery";
+import OurClients from "@/components/OurClients";
+import VideoBlock from "@/components/VideoBlock";
+import ContactForm from "@/components/ContactForm";
+import OurServices from "@/components/OurServices";
+import GallerySlider from "@/components/GallerySlider";
+import Accreditations from "@/components/Accreditations";
+import TitleParagraph from "@/components/TitleParagraph";
+import TestimonialsTwo from "@/components/TestimonialsTwo";
+import OurProjectsGrid from "@/components/OurProjectsGrid";
+import TestimonialsGrid from "@/components/TestimonialsGrid";
+import TitleContentImage from "@/components/TitleContentImage";
+import SkillsExperiences from "@/components/SkillsExperiences";
+import AboutContentImage from "@/components/AboutContentImage";
+import TestimonialsSlider from "@/components/TestimonialsSlider";
+import OurServicesGridTwo from "@/components/OurServicesGridTwo";
+import RequestAppointmentForm from "@/components/RequestAppointmentForm";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
-	const FlexibleContent: IPostTypeFlexibleContent =
-		content?.postTypeFlexibleContent;
+	const FlexibleContent: any = content?.postTypeFlexibleContent;
 
 	// Components Key Value Pairs
 	const componentMap: any = {
@@ -45,9 +43,7 @@ const RenderFlexibleContent: FC = () => {
 		[`${FlexibleContent}_VideoBlock`]: VideoBlock,
 		[`${FlexibleContent}_OurClients`]: OurClients,
 		[`${FlexibleContent}_ContactForm`]: ContactForm,
-		[`${FlexibleContent}_Maintenance`]: Maintenance,
 		[`${FlexibleContent}_OurServices`]: OurServices,
-		[`${FlexibleContent}_ErrorPageContent`]: ErrorPage,
 		[`${FlexibleContent}_GallerySlider`]: GallerySlider,
 		[`${FlexibleContent}_TitleParagraph`]: TitleParagraph,
 		[`${FlexibleContent}_Accreditations`]: Accreditations,

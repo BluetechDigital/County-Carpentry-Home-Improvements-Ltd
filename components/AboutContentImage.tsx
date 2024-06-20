@@ -135,7 +135,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 												transform="translate(443.5 2086.054)"
 												fill="none"
 												stroke="#ffffff"
-												stroke-width="3"
+												strokeWidth="3"
 											/>
 											<path
 												id="Path_49"
@@ -144,7 +144,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 												transform="translate(-1.047 -15.019)"
 												fill="none"
 												stroke="#ffffff"
-												stroke-width="3"
+												strokeWidth="3"
 											/>
 										</g>
 									</svg>
@@ -199,7 +199,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 												transform="translate(443.5 2086.054)"
 												fill="none"
 												stroke="#000"
-												stroke-width="3"
+												strokeWidth="3"
 												className="group-hover:stroke-white transition-all duration-200 ease-in-out"
 											/>
 											<path
@@ -209,7 +209,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 												transform="translate(-1.047 -15.019)"
 												fill="none"
 												stroke="#000"
-												stroke-width="3"
+												strokeWidth="3"
 												className="group-hover:stroke-white transition-all duration-200 ease-in-out"
 											/>
 										</g>
@@ -258,7 +258,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 												transform="translate(443.5 2086.054)"
 												fill="none"
 												stroke="#ffffff"
-												stroke-width="3"
+												strokeWidth="3"
 											/>
 											<path
 												id="Path_49"
@@ -267,7 +267,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 												transform="translate(-1.047 -15.019)"
 												fill="none"
 												stroke="#ffffff"
-												stroke-width="3"
+												strokeWidth="3"
 											/>
 										</g>
 									</svg>

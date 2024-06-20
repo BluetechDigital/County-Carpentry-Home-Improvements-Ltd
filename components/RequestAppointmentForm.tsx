@@ -10,11 +10,11 @@ import {
 } from "@/animations/animations";
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 import React, {useState, FC} from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useGlobalContext} from "@/context/global";
-import {sendContactForm} from "@/lib/contactForm";
+// import {sendContactForm} from "@/lib/contactForm";
 import {useFormik, Formik, Field, Form} from "formik";
 import {IRequestAppointmentForm} from "@/types/components";
 
@@ -31,7 +31,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 	paragraph,
 	buttonLink,
 }) => {
-	const router = useRouter();
+	const router: any = useRouter();
 	const globalContext = useGlobalContext();
 
 	// Loading, Send & Error Message States
@@ -95,7 +95,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 			if (reCaptchaResult) {
 				try {
 					console.log(values);
-					await sendContactForm(values);
+					// await sendContactForm(values);
 				} catch (error) {
 					setErrorMessage(true);
 					throw new Error(
@@ -210,7 +210,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 												transform="translate(443.5 2086.054)"
 												fill="none"
 												stroke="#ffffff"
-												stroke-width="3"
+												strokeWidth="3"
 											/>
 											<path
 												id="Path_49"
@@ -219,7 +219,7 @@ const RequestAppointmentForm: FC<IRequestAppointmentForm> = ({
 												transform="translate(-1.047 -15.019)"
 												fill="none"
 												stroke="#ffffff"
-												stroke-width="3"
+												strokeWidth="3"
 											/>
 										</g>
 									</svg>

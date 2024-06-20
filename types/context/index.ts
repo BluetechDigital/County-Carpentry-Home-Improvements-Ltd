@@ -1,31 +1,6 @@
 export type ISeo = {
-	canonical: string;
-	cornerstone: Boolean;
-	focuskw: string;
-	fullHead: string;
-	metaDesc: string;
-	metaKeywords: string;
-	metaRobotsNofollow: string;
-	metaRobotsNoindex: string;
-	opengraphAuthor: string;
-	opengraphDescription: string;
-	opengraphImage: {
-		mediaItemUrl: string;
-	};
-	opengraphModifiedTime: string;
-	opengraphPublishedTime: string;
-	opengraphPublisher: string;
-	opengraphSiteName: string;
-	opengraphTitle: string;
-	opengraphType: string;
-	opengraphUrl: string;
-	readingTime: number;
 	title: string;
-	twitterDescription: string;
-	twitterTitle: string;
-	twitterImage: {
-		mediaItemUrl: string;
-	};
+	metaDesc: string;
 };
 export type IContent = [
 	{
@@ -61,15 +36,6 @@ export type IOurProjects = [
 		};
 	}
 ];
-export type IMobileLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
 export type ITestimonials = [
 	{
 		node: {
@@ -89,42 +55,6 @@ export type ITestimonials = [
 					};
 				};
 			};
-		};
-	}
-];
-export type ICopyrightLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IFooterMenuLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type INavbarMenuLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
-export type IServicesSublinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
 		};
 	}
 ];
@@ -160,39 +90,74 @@ export type IThemesOptionsContent = {
 	};
 	displayNoticeBanner: boolean;
 	noticeBannerTextarea: string;
+	errorPageContent: {
+		title: string;
+		paragraph: string;
+		buttonLink: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		backgroundImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
 };
+
+// WEBSITE LINKS AND SUBLINKS
+export namespace ILinks {
+	export type INavbarMenuLinks = {
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}[];
+
+	export interface IMobileLinks extends INavbarMenuLinks {}
+	export interface ICopyrightLinks extends INavbarMenuLinks {}
+	export interface IFooterMenuLinks extends INavbarMenuLinks {}
+	export interface IServicesSublinks extends INavbarMenuLinks {}
+}
 
 /* CONTEXT PROVIDERS  */
 export type IPageContext = {
-	seo: ISeo;
 	content: IContent;
-	postTypeFlexibleContent: IPostTypeFlexibleContent;
+	postTypeFlexibleContent: string;
 };
 export type IGlobalProps = {
 	ourProjects: IOurProjects;
-	mobileLinks: IMobileLinks;
 	testimonials: ITestimonials;
-	copyrightLinks: ICopyrightLinks;
-	navbarMenuLinks: INavbarMenuLinks;
-	footerMenuLinks: IFooterMenuLinks;
-	servicesSublinks: IServicesSublinks;
 	themesOptionsContent: IThemesOptionsContent;
+
+	// Website Links
+	mobileLinks: ILinks.IMobileLinks;
+	copyrightLinks: ILinks.ICopyrightLinks;
+	navbarMenuLinks: ILinks.INavbarMenuLinks;
+	footerMenuLinks: ILinks.IFooterMenuLinks;
+	servicesSublinks: ILinks.IServicesSublinks;
 };
 export type IGlobalContext = {
 	ourProjects: IOurProjects;
-	mobileLinks: IMobileLinks;
 	testimonials: ITestimonials;
-	copyrightLinks: ICopyrightLinks;
-	navbarMenuLinks: INavbarMenuLinks;
-	footerMenuLinks: IFooterMenuLinks;
-	servicesSublinks: IServicesSublinks;
 	themesOptionsContent: IThemesOptionsContent;
+
+	// Website Links
+	mobileLinks: ILinks.IMobileLinks;
+	copyrightLinks: ILinks.ICopyrightLinks;
+	navbarMenuLinks: ILinks.INavbarMenuLinks;
+	footerMenuLinks: ILinks.IFooterMenuLinks;
+	servicesSublinks: ILinks.IServicesSublinks;
 };
 export type IPageContextProvider = {
-	seo: ISeo;
 	content: IContent;
 	children: React.ReactNode;
-	postTypeFlexibleContent: IPostTypeFlexibleContent;
+	postTypeFlexibleContent: string;
 };
 export type IFlexibleContentType = {
 	pages: string;
@@ -203,6 +168,6 @@ export type IGlobalContextProvider = {
 	globalProps: IGlobalContext;
 	children: React.ReactNode;
 };
-export type IPostTypeFlexibleContent = {
-	postTypeFlexibleContent: string;
+export type IApolloContextProvider = {
+	children: React.ReactNode;
 };

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://countycarpentry.co.uk/api/sitemap.xml

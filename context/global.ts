@@ -1,3 +1,5 @@
+"use client";
+
 // Imports
 import {IGlobalContext} from "@/types/context";
 import {createContext, useContext} from "react";

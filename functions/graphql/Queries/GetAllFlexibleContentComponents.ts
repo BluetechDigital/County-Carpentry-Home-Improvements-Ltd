@@ -391,34 +391,6 @@ export const getAllFlexibleContentComponents = async (
 													target
 												}
 											}
-											... on ${postTypeFlexibleContent}_Maintenance {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												backgroundImage {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
-											}
-											... on ${postTypeFlexibleContent}_ErrorPageContent {
-												fieldGroupName
-												displaySection
-												title
-												paragraph
-												buttonLink {
-													url
-													title
-													target
-												}
-												backgroundImage {
-													sourceUrl
-												}
-											}
 										}
 									}
 								}

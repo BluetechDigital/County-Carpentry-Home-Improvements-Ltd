@@ -1,5 +1,16 @@
 import {IThemesOptionsContent} from "../context";
 
+/* Send Contact Form */
+export type ISendContactForm = {
+	firstName: string;
+	lastName: string;
+	email: string;
+	phoneNumber: string;
+	selectedServices: string;
+	subject: string;
+	message: string;
+};
+
 /* Customer Enquiry 
 Confirmation Email */
 export type ICustomerEmail = {
@@ -97,7 +108,7 @@ export namespace ICustomerEmail {
 		lastName?: string;
 		firstName?: string;
 		updatedDate?: Date;
-		phoneNumber?: number;
+		phoneNumber?: string;
 		imagesDirUrl?: string;
 		selectedServices?: string;
 		themesOptionsContent?: IThemesOptionsContent;
@@ -176,7 +187,7 @@ export namespace IBusinessEmail {
 		lastName?: string;
 		firstName?: string;
 		updatedDate?: Date;
-		phoneNumber?: number;
+		phoneNumber?: string;
 		imagesDirUrl?: string;
 		selectedServices?: string;
 		themesOptionsContent?: IThemesOptionsContent;
@@ -259,7 +270,7 @@ export namespace ICustomerRequestAppointmentEmail {
 		subject?: string;
 		fullName?: string;
 		updatedDate?: Date;
-		phoneNumber?: number;
+		phoneNumber?: string;
 		imagesDirUrl?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
@@ -336,7 +347,7 @@ export namespace IBusinessRequestAppointmentEmail {
 		subject?: string;
 		fullName?: string;
 		updatedDate?: Date;
-		phoneNumber?: number;
+		phoneNumber?: string;
 		imagesDirUrl?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
